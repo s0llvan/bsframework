@@ -1,0 +1,15 @@
+IndexOptions +Charset=UTF-8
+
+Options -Indexes
+
+RewriteEngine on
+RewriteRule ^([a-zA-z0-9\-\_\/]*)$ index.php?url=$1
+
+RewriteRule ^application/ - [F]
+RewriteRule ^languages/ - [F]
+RewriteRule ^core/ - [F]
+RewriteRule ^libraries/.*\.(php)$ - [F]
+RewriteRule ^config.php - [F]
+
+ErrorDocument 404 http://127.0.0.1/
+ErrorDocument 403 http://127.0.0.1/
